@@ -1,12 +1,17 @@
 import express from "express";
-import { getProfile, checkAdmin, signup } from "../controllers/userController.js";
-import { protect } from "../middleware/authMiddleware.js";
+import {
+  getAllUsers,
+  getUserById,
+  getProfile,
+  checkAdmin
+} from "../controllers/userController.js";
 
 const router = express.Router();
 
-router.post("/register", signup);       // <<< ADD THIS
-
-router.get("/profile", protect, getProfile);
-router.get("/check-admin", protect, checkAdmin);
+// Routes
+router.get("/", getAllUsers);
+router.get("/:id", getUserById);
+router.get("/profile/me", getProfile);
+router.get("/check/admin", checkAdmin);
 
 export default router;

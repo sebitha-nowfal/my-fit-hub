@@ -6,8 +6,8 @@ import {
   deleteTrainer
 } from "../controllers/trainerController.js";
 
-import { protect } from "../middlewares/authMiddleware.js";
-import { authorize } from "../middlewares/adminMiddleware.js";
+import { protect } from "../middleware/authMiddleware.js";
+import { authorize } from "../middleware/adminMiddleware.js";
 
 const router = express.Router();
 
